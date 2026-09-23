@@ -1,0 +1,328 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  padding-top: 70px;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+.navbar-bakehouse {
+  min-height: 70px;
+  border-bottom: 1px solid #eee4dc;
+  box-shadow: 0 4px 18px rgba(67, 42, 29, 0.08);
+}
+
+.navbar-bakehouse .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #432a1d;
+  font-size: 1.28rem;
+  letter-spacing: 0;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.navbar-bakehouse .brand-mark {
+  display: block;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+}
+
+.navbar-bakehouse .brand-wordmark {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.navbar-bakehouse .nav-link {
+  color: #5f5048;
+  font-size: 0.94rem;
+  font-weight: 500;
+  padding: 0.5rem 0.15rem;
+  transition: color 0.2s ease;
+}
+
+.navbar-bakehouse .nav-link:hover,
+.navbar-bakehouse .nav-link:focus,
+.navbar-bakehouse .nav-link.active {
+  color: #a85d4a;
+}
+
+.navbar-bakehouse .nav-action {
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-bakehouse .nav-action:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-bakehouse .navbar-collapse {
+    padding: 0.75rem 0 0.5rem;
+  }
+
+  .navbar-bakehouse .nav-item + .nav-item {
+    margin-top: 0.2rem;
+  }
+
+  .navbar-bakehouse .nav-action {
+    display: inline-block;
+    margin-top: 0.35rem;
+  }
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+              url('https://picsum.photos/seed/bakehouse-hero/1200/800') center/cover no-repeat;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.product-card {
+  height: 100%;
+  border: 1px solid #eee4dc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(67, 42, 29, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recipe-card {
+  border: 1px solid #eee4dc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(67, 42, 29, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 12px 24px rgba(67, 42, 29, 0.14);
+  transform: translateY(-5px);
+}
+
+.recipe-card:hover {
+  box-shadow: 0 12px 24px rgba(67, 42, 29, 0.13);
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+  background-color: #f7f2ed;
+}
+
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.product-card .card-title {
+  color: #432a1d;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.product-card .card-text {
+  margin-bottom: 1rem;
+  color: #a85d4a !important;
+  font-weight: 600;
+}
+
+.product-action {
+  align-self: center;
+  min-width: 130px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  background-color: #f7f2ed;
+}
+
+.recipe-card .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem;
+}
+
+.recipe-card .card-title {
+  color: #432a1d;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.recipe-meta {
+  margin-bottom: 1.2rem;
+  color: #7b6a60 !important;
+  font-size: 0.9rem;
+}
+
+.recipe-action {
+  align-self: flex-start;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.custom-cake-section {
+  background-color: #fffaf4;
+}
+
+.custom-cake-media {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-cake-image {
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #f7f2ed;
+  box-shadow: 0 10px 24px rgba(67, 42, 29, 0.1);
+}
+
+.custom-cake-copy {
+  padding: 1.5rem 2rem;
+}
+
+.custom-cake-copy .section-title {
+  margin-bottom: 1rem;
+  color: #432a1d;
+}
+
+.custom-cake-copy p {
+  max-width: 440px;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.custom-cake-action {
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.weekend-special {
+  background-color: #432a1d !important;
+  border-top: 1px solid #634535;
+  border-bottom: 1px solid #634535;
+}
+
+.weekend-special-content {
+  max-width: 760px;
+}
+
+.weekend-special .section-title {
+  color: #fffaf4;
+}
+
+.weekend-special p {
+  margin-right: auto;
+  margin-left: auto;
+  color: rgba(255, 250, 244, 0.88);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.weekend-code {
+  display: inline-block;
+  margin: 0 0.2rem;
+  color: #f3c56b;
+  letter-spacing: 0.08em;
+}
+
+.weekend-action {
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.about-section {
+  background-color: #fffdf9;
+}
+
+.about-content {
+  max-width: 850px;
+}
+
+.about-title {
+  position: relative;
+  margin-bottom: 1.25rem;
+  color: #432a1d;
+}
+
+.about-title::after {
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin: 0.9rem auto 0;
+  border-radius: 2px;
+  background-color: #d99a54;
+  content: '';
+}
+
+.about-copy {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #6d5d54 !important;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.footer-bakehouse {
+  border-top: 1px solid #eee4dc;
+  background-color: #f7f2ed !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.footer-copy {
+  color: #7b6a60;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 767.98px) {
+  .custom-cake-image {
+    height: 280px;
+  }
+
+  .custom-cake-copy {
+    padding: 0.5rem 0.75rem 0;
+    text-align: center;
+  }
+
+  .custom-cake-copy p {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
