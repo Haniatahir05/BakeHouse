@@ -5,19 +5,19 @@ function AdminLogin() {
     <div className="container py-5">
       <div className="row justify-content-center">
         <div className="col-12 col-sm-10 col-md-7 col-lg-5">
-          <div className="card border-0 shadow-sm">
+          <div className="card border-0 shadow-sm bg-light">
             <div className="card-body p-4 p-md-5">
               {/* Header */}
               <div className="text-center mb-4">
-                <h1 className="h3 text-warning fw-bold mb-1">BakeHouse</h1>
-                <span className="badge bg-dark text-warning px-3 py-2 fw-semibold">
+                <h1 className="h3 text-dark fw-bold mb-2">BakeHouse</h1>
+                <span className="badge bg-dark text-white px-3 py-2 fw-semibold">
                   Admin Portal Access
                 </span>
               </div>
 
               <form onSubmit={(e) => e.preventDefault()}>
                 <div className="mb-3">
-                  <label htmlFor="adminEmail" className="form-label fw-semibold">
+                  <label htmlFor="adminEmail" className="form-label text-dark fw-semibold">
                     Admin Email
                   </label>
                   <input
@@ -31,7 +31,7 @@ function AdminLogin() {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="adminPassword" className="form-label fw-semibold">
+                  <label htmlFor="adminPassword" className="form-label text-dark fw-semibold">
                     Password
                   </label>
                   <input
@@ -44,7 +44,8 @@ function AdminLogin() {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-warning text-dark fw-bold w-100">
+                {/* Clean Dark Button */}
+                <button type="submit" className="btn btn-dark fw-bold w-100">
                   Login as Admin
                 </button>
               </form>

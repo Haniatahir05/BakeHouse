@@ -226,10 +226,10 @@ import RiderLogin from './components/RiderLogin.jsx';
 function App() {
   return (
     <div>
-      <Register />
+      {/* <Register /> */}
       {/* <Login /> */}
       {/* <AdminLogin /> */}
-      {/* <AdminDashboard /> */}
+      <AdminDashboard />
       {/* <CustomerPanel/> */}
       {/* <RiderPanel /> */}
       {/* <RiderLogin /> */}
