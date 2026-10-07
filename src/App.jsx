@@ -14,6 +14,12 @@ import CustomerPanel from './components/CustomerPanel.jsx';
 import RiderPanel from './components/RiderPanel.jsx';
 import AdminLogin from './components/AdminLogin.jsx';
 import RiderLogin from './components/RiderLogin.jsx';
+import AddProduct from './components/AddProduct';
+import ManageOrders from './components/ManageOrders';
+import CustomizeCake from './components/CustomizeCake';
+import PlaceOrderForm from './components/PlaceOrder';
+import AssignedOrders from './components/AssignedOrders';
+import ContactUs from './components/ContactUs';
 // function App() {
 //   return (
 //     <>
@@ -226,13 +232,20 @@ import RiderLogin from './components/RiderLogin.jsx';
 function App() {
   return (
     <div>
-      {/* <Register /> */}
-      {/* <Login /> */}
-      {/* <AdminLogin /> */}
+      <Register />
+      <Login />
+      <AdminLogin />
       <AdminDashboard />
-      {/* <CustomerPanel/> */}
-      {/* <RiderPanel /> */}
-      {/* <RiderLogin /> */}
+      <CustomerPanel/>
+      <RiderPanel />
+      <RiderLogin />
+      <AddProduct />
+      <ManageOrders/>
+      <CustomizeCake />
+      <PlaceOrderForm />
+      <AssignedOrders />
+      <ContactUs /> 
+
     </div>
   );
 }
