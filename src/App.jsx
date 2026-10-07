@@ -1,11 +1,11 @@
-import bakingImg from '../Baking.jpg';
-import brownieImg from '../brownie.webp';
-import chocolateImg from '../chocolate.jpeg';
-import vanillaImg from '../vanilla.jpeg';
-import classicChocolateImg from '../classic chocolate.jpeg';
-import redVelvetImg from '../valvet cupcakes.jpg';
-import chocoCookiesImg from '../choco cookies.jpg';
-import designCakeImg from '../design cake.jpg';
+import bakingImg from './assets/Baking.jpg';
+import brownieImg from './assets/brownie.webp';
+import chocolateImg from './assets/chocolate.jpeg';
+import vanillaImg from './assets/vanilla.jpeg';
+import classicChocolateImg from './assets/classic chocolate.jpeg';
+import redVelvetImg from './assets/valvet cupcakes.jpg';
+import chocoCookiesImg from './assets/choco cookies.jpg';
+import designCakeImg from './assets/design cake.jpg';
 import bakehouseMark from './assets/bakehouse-mark.svg';
 import Login from './components/login.jsx';
 import Register from './components/register.jsx';
@@ -20,8 +20,9 @@ import CustomizeCake from './components/CustomizeCake';
 import PlaceOrderForm from './components/PlaceOrder';
 import AssignedOrders from './components/AssignedOrders';
 import ContactUs from './components/ContactUs';
+import { Link } from 'react-router-dom';
 // function App() {
-//   return (
+  // return (
 //     <>
 //       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-bakehouse">
 //         <div className="container">
@@ -231,7 +232,17 @@ import ContactUs from './components/ContactUs';
 // }
 function App() {
   return (
-    <div>
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#063b3b' }}>
+        <div className="container">
+          <Link className="navbar-brand fw-bold" to="/">BakeHouse</Link>
+          <div className="navbar-nav ms-auto">
+            <Link className="nav-link" to="/admin">Admin</Link>
+            <Link className="nav-link" to="/customer">Customer</Link>
+            <Link className="nav-link" to="/rider">Rider</Link>
+          </div>
+        </div>
+      </nav>
       <Register />
       <Login />
       <AdminLogin />
@@ -244,9 +255,9 @@ function App() {
       <CustomizeCake />
       <PlaceOrderForm />
       <AssignedOrders />
-      <ContactUs /> 
+      <ContactUs />  
 
-    </div>
+    </>
   );
 }
 

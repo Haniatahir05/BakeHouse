@@ -5,11 +5,10 @@ function AdminLogin() {
     <div className="container py-5">
       <div className="row justify-content-center">
         <div className="col-12 col-sm-10 col-md-7 col-lg-5">
-          <div className="card border-0 shadow-sm bg-light">
+          <div className="card border-0 shadow-sm">
             <div className="card-body p-4 p-md-5">
-              {/* Header */}
+              <h1 className="h3 text-center text-dark mb-2">Bakehouse</h1>
               <div className="text-center mb-4">
-                <h1 className="h3 text-dark fw-bold mb-2">BakeHouse</h1>
                 <span className="badge bg-dark text-white px-3 py-2 fw-semibold">
                   Admin Portal Access
                 </span>
@@ -17,8 +16,8 @@ function AdminLogin() {
 
               <form onSubmit={(e) => e.preventDefault()}>
                 <div className="mb-3">
-                  <label htmlFor="adminEmail" className="form-label text-dark fw-semibold">
-                    Admin Email
+                  <label htmlFor="adminEmail" className="form-label">
+                    Email address
                   </label>
                   <input
                     type="email"
@@ -30,8 +29,8 @@ function AdminLogin() {
                   />
                 </div>
 
-                <div className="mb-4">
-                  <label htmlFor="adminPassword" className="form-label text-dark fw-semibold">
+                <div className="mb-3">
+                  <label htmlFor="adminPassword" className="form-label">
                     Password
                   </label>
                   <input
@@ -44,8 +43,13 @@ function AdminLogin() {
                   />
                 </div>
 
-                {/* Clean Dark Button */}
-                <button type="submit" className="btn btn-dark fw-bold w-100">
+                <div className="text-end mb-4">
+                  <a href="#forgot-password" className="small text-muted text-decoration-none">
+                    Forgot Password?
+                  </a>
+                </div>
+
+                <button type="submit" className="btn btn-dark w-100">
                   Login as Admin
                 </button>
               </form>
