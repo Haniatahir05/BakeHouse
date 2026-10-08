@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function AdminMenu() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#063b3b' }}>
+    <nav className="navbar navbar-expand-lg navbar-light bg-white navbar-bakehouse">
       <div className="container">
         <Link className="navbar-brand fw-bold" to="/">BakeHouse</Link>
         <button
