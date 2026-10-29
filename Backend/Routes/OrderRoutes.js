@@ -1,9 +1,20 @@
-import { Router } from "express";
-import { assignOrder, createOrder, listOrders, updateOrderStatus } from "../Controller/OrderController.js";
+import express from "express";
 
-const router = Router();
-router.get("/", listOrders);
-router.post("/", createOrder);
-router.patch("/:id/status", updateOrderStatus);
-router.patch("/:id/assign", assignOrder);
+import {
+  createOrderController,
+  viewOrdersController,
+  updateOrderStatusController,
+  assignRiderController
+} from "../Controller/OrderController.js";
+
+const router = express.Router();
+
+router.post("/", createOrderController);
+
+router.get("/", viewOrdersController);
+
+router.put("/:orderId/status", updateOrderStatusController);
+
+router.put("/:orderId/assign-rider", assignRiderController);
+
 export default router;

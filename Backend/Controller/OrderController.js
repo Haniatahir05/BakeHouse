@@ -1,32 +1,69 @@
 import Order from "../Models/Order.js";
-import Service from "../Models/Service.js";
-import User from "../Models/User.js";
 
-export async function createOrder(req, res) {
-  const { serviceId, quantity = 1, deliveryAddress, phone, paymentMethod = "COD" } = req.body;
-  const service = await Service.findOne({ _id: serviceId, isAvailable: true });
-  if (!service || !deliveryAddress || !phone) return res.status(400).json({ message: "Available service, deliveryAddress and phone are required" });
-  const order = await Order.create({ serviceId, quantity, deliveryAddress, phone, paymentMethod, totalAmount: service.price * quantity });
-  res.status(201).json(await order.populate("serviceId"));
-}
+// ADD ORDER
+export const createOrderController = (req, res) => {
+  const {
+    customerId,
+    riderId,
+    serviceId,
+    quantity,
+    deliveryAddress,
+    phone,
+    paymentMethod,
+    totalAmount
+  } = req.body;
 
-export async function listOrders(req, res) {
-  res.json(await Order.find({}).populate("customerId riderId serviceId").sort({ createdAt: -1 }));
-}
+  const newOrder = new Order({
+    customerId,
+    riderId,
+    serviceId,
+    quantity,
+    deliveryAddress,
+    phone,
+    paymentMethod,
+    totalAmount
+  });
 
-export async function assignOrder(req, res) {
+  newOrder.save()
+    .then(() => res.status(201).send("Order placed successfully"))
+    .catch((error) => res.status(500).send("Error placing order: " + error));
+};
+
+// VIEW ORDERS
+export const viewOrdersController = (req, res) => {
+  Order.find()
+    .then((orders) => res.status(200).json(orders))
+    .catch((error) => res.status(500).send("Error fetching orders: " + error));
+};
+
+// UPDATE ORDER STATUS
+export const updateOrderStatusController = (req, res) => {
+  const { orderId } = req.params;
+  const { status } = req.body;
+
+  Order.findByIdAndUpdate(orderId, { status }, { new: true })
+    .then((order) => {
+      if (!order) {
+        return res.status(404).send("Order not found");
+      }
+
+      res.status(200).send("Order status updated successfully");
+    })
+    .catch((error) => res.status(500).send("Error updating order: " + error));
+};
+
+// ASSIGN RIDER
+export const assignRiderController = (req, res) => {
+  const { orderId } = req.params;
   const { riderId } = req.body;
-  const rider = await User.findOne({ _id: riderId, role: "rider" });
-  if (!rider) return res.status(404).json({ message: "Rider not found" });
-  const order = await Order.findByIdAndUpdate(req.params.id, { riderId, status: "Accepted" }, { new: true }).populate("customerId riderId serviceId");
-  if (!order) return res.status(404).json({ message: "Order not found" });
-  res.json(order);
-}
 
-export async function updateOrderStatus(req, res) {
-  const allowed = ["Pending", "Accepted", "In Progress", "Completed", "Cancelled"];
-  if (!allowed.includes(req.body.status)) return res.status(400).json({ message: "Invalid order status" });
-  const order = await Order.findByIdAndUpdate(req.params.id, { status: req.body.status }, { new: true }).populate("customerId riderId serviceId");
-  if (!order) return res.status(404).json({ message: "Order not found" });
-  res.json(order);
-}
+  Order.findByIdAndUpdate(orderId, { riderId }, { new: true })
+    .then((order) => {
+      if (!order) {
+        return res.status(404).send("Order not found");
+      }
+
+      res.status(200).send("Rider assigned successfully");
+    })
+    .catch((error) => res.status(500).send("Error assigning rider: " + error));
+};

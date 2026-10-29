@@ -1,3 +1,24 @@
-import { createService } from "./ServiceController.js";
+import { Router } from "express";
 
-export const productController = createService;
+import {
+  productController,
+  viewProductsController,
+  editProductController,
+  deleteProductController
+} from "../Controller/ProductController.js";
+
+const router = Router();
+
+// Add product
+router.post("/", productController);
+
+// View all products
+router.get("/", viewProductsController);
+
+// Update product by productId
+router.put("/:productId", editProductController);
+
+// Delete product by productId
+router.delete("/:productId", deleteProductController);
+
+export default router;
